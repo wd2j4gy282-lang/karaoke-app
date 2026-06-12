@@ -1,0 +1,7 @@
+torch
+demucs
+whisperx
+librosa
+numpy
+yt-dlp
+flask

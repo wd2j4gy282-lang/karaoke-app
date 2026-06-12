@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(chmod +x \"/Users/bagus/Scripts/karaoke-app/Start Karaoke.command\")",
+      "Bash(/Users/bagus/Scripts/karaoke-app/venv/bin/python -m pip show yt-dlp)",
+      "Bash(/Users/bagus/Scripts/karaoke-app/venv/bin/python -m pip install --upgrade yt-dlp)",
+      "Bash(/Users/bagus/Scripts/karaoke-app/venv/bin/python -m pip install --upgrade --pre \"yt-dlp[default]\")",
+      "Read(//private/tmp/**)",
+      "Bash(timeout 90 /Users/bagus/Scripts/karaoke-app/venv/bin/python -m yt_dlp -x --audio-format mp3 -o \"test_dl.%\\(ext\\)s\" \"https://www.youtube.com/watch?v=qN4ooNx77u0\")",
+      "Bash(/Users/bagus/Scripts/karaoke-app/venv/bin/python -m yt_dlp -x --audio-format mp3 -o \"test_dl.%\\(ext\\)s\" \"https://www.youtube.com/watch?v=qN4ooNx77u0\")",
+      "Bash(/Users/bagus/Scripts/karaoke-app/venv/bin/python -m yt_dlp -x --audio-format mp3 --extractor-args \"youtube:player_client=android,ios,web_music\" -o \"test_dl.%\\(ext\\)s\" \"https://www.youtube.com/watch?v=qN4ooNx77u0\")",
+      "Read(//opt/homebrew/Cellar/ffmpeg/8.1.1/bin/**)",
+      "Bash(/opt/homebrew/bin/ffmpeg -version)",
+      "Bash(rm -f /tmp/test_dl.*)",
+      "Bash(venv/bin/python -c ' *)",
+      "Bash(rm -rf /tmp/ytdl_test)",
+      "Bash(rm -rf /tmp/ytdl_test /tmp/test_dl.*)",
+      "Skill(fewer-permission-prompts)",
+      "Skill(fewer-permission-prompts:*)",
+      "Bash(cd /Users/bagus/.claude/projects && find . -name \"*.jsonl\" -newer /tmp 2>/dev/null | head -5; echo \"---\"; ls -la)",
+      "Bash(xargs -0 ls -t)",
+      "Read(//tmp/**)"
+    ]
+  }
+}

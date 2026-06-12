@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karaoke</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="header">
+    <h1>Karaoke</h1>
+    <button id="quit-btn" class="quit">Quit App</button>
+  </div>
+
+  <section>
+    <h2>Library</h2>
+    <div id="library" class="grid">Loading...</div>
+  </section>
+
+  <section>
+    <h2>Add a song from YouTube</h2>
+    <form id="search-form">
+      <input type="text" id="search-input" placeholder="Search YouTube..." autocomplete="off">
+      <button type="submit">Search</button>
+    </form>
+    <div id="search-results" class="grid"></div>
+  </section>
+
+  <section id="job-status" class="hidden">
+    <h2>Processing</h2>
+    <p id="job-stage"></p>
+  </section>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
