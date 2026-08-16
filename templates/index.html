@@ -7,28 +7,38 @@
   <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-  <div class="header">
-    <h1>Karaoke</h1>
-    <button id="quit-btn" class="quit">Quit App</button>
-  </div>
+  <header class="app-header">
+    <div class="badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="9" y="2" width="6" height="12" rx="3"/>
+        <path d="M5 10a7 7 0 0 0 14 0"/>
+        <path d="M12 17v5"/><path d="M8 22h8"/>
+      </svg>
+    </div>
+    <div class="app-head-text">
+      <h1>Karaoke</h1>
+      <p class="app-sub">Search YouTube, separate vocals, sync lyrics &amp; sing along.</p>
+    </div>
+    <button id="quit-btn" class="quit">Quit</button>
+  </header>
 
-  <section>
-    <h2>Library</h2>
+  <section class="panel">
+    <div class="section-head">
+      <h2>Your library</h2>
+    </div>
     <div id="library" class="grid">Loading...</div>
   </section>
 
-  <section>
-    <h2>Add a song from YouTube</h2>
+  <section class="panel">
+    <div class="section-head">
+      <h2>Add a song</h2>
+      <p class="section-desc">Find a track on YouTube to build a karaoke version of it.</p>
+    </div>
     <form id="search-form">
       <input type="text" id="search-input" placeholder="Search YouTube..." autocomplete="off">
       <button type="submit">Search</button>
     </form>
     <div id="search-results" class="grid"></div>
-  </section>
-
-  <section id="job-status" class="hidden">
-    <h2>Processing</h2>
-    <p id="job-stage"></p>
   </section>
 
   <script src="/static/app.js"></script>

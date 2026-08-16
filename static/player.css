@@ -1,0 +1,291 @@
+.back-link {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.song-title-wrap {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-width: 0;
+}
+
+.song-title {
+  font-size: 1.1rem;
+  margin: 0;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.rename-title-btn {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  padding: 0.25rem;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.15s, color 0.15s, background 0.15s;
+  flex-shrink: 0;
+}
+
+.rename-title-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+.song-title-wrap:hover .rename-title-btn {
+  opacity: 1;
+}
+
+.rename-title-btn:hover {
+  color: var(--accent);
+  background: var(--surface-2);
+}
+
+.song-title-input {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  text-align: center;
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--accent);
+  background: var(--surface);
+  color: var(--text);
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 0 0 3px rgba(0, 113, 227, 0.15);
+}
+
+.song-title-input:focus {
+  outline: none;
+}
+
+#visualizer {
+  display: block;
+  width: 100%;
+  height: 120px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin: 1rem 0;
+}
+
+#seek-bar {
+  position: relative;
+  height: 10px;
+  background: var(--surface-2);
+  border-radius: 5px;
+  margin: 0.5rem 0;
+  cursor: pointer;
+}
+
+#seek-progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  background: var(--accent);
+  border-radius: 5px;
+  pointer-events: none;
+}
+
+#seek-handle {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+}
+
+#time-display {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-bottom: 0.75rem;
+}
+
+#lyrics {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem 1rem;
+  min-height: 160px;
+  max-height: 240px;
+  overflow-y: auto;
+  font-size: 1.3rem;
+  line-height: 2.2rem;
+  text-align: center;
+}
+
+#lyrics .word-group {
+  display: inline-block;
+  margin: 0 0.15em;
+}
+
+#lyrics .syllable {
+  color: var(--muted);
+  transition: color 0.1s, transform 0.1s;
+  cursor: pointer;
+}
+
+#lyrics .syllable:hover {
+  color: var(--text);
+  text-decoration: underline;
+}
+
+#lyrics .syllable.active {
+  color: var(--text);
+  font-weight: 700;
+  transform: scale(1.08);
+  display: inline-block;
+}
+
+#lyrics .syllable.sung {
+  color: var(--accent);
+}
+
+#lyrics .dot {
+  display: inline-block;
+  margin: 0 0.15em;
+  color: var(--border);
+  font-size: 1.4rem;
+  font-weight: 900;
+  line-height: 1;
+  cursor: pointer;
+  transition: color 0.1s, transform 0.1s;
+}
+
+#lyrics .dot:hover {
+  color: var(--muted);
+}
+
+#lyrics .dot.active {
+  color: var(--text);
+  transform: scale(1.3);
+}
+
+#lyrics .dot.sung {
+  color: var(--accent);
+}
+
+#pitch-meter {
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.pitch-track {
+  position: relative;
+  height: 24px;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.pitch-center-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--border);
+}
+
+#pitch-needle {
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  left: 50%;
+  width: 6px;
+  border-radius: 3px;
+  background: var(--muted);
+  transform: translateX(-50%);
+  transition: left 0.08s linear, background 0.08s linear;
+}
+
+#pitch-needle.in-tune { background: #4caf50; }
+#pitch-needle.flat, #pitch-needle.sharp { background: #f0a020; }
+#pitch-needle.far { background: #e55; }
+
+#pitch-label {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+#controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+#score-display {
+  margin-left: auto;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+#sync-panel {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin: 0.5rem 0 1rem;
+}
+
+#sync-panel.hidden {
+  display: none;
+}
+
+.sync-section {
+  margin-bottom: 1rem;
+}
+
+.sync-section:last-child {
+  margin-bottom: 0;
+}
+
+.sync-section label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+}
+
+#sync-offset-slider {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.sync-hint {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin: 0.4rem 0 0;
+}
+
+#tap-sync-btn.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+#lyrics .word-group.tap-target .syllable {
+  outline: 2px dashed #f0a020;
+  outline-offset: 2px;
+}
